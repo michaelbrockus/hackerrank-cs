@@ -23,23 +23,6 @@ jobs:
         name: MacOS_Meson_Testlog
         path: build/meson-logs/testlog.txt
 
-  windows:
-    runs-on: windows-latest
-    steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-python@v1
-      with:
-        python-version: '3.9.x'
-
-    - uses: msys2/setup-msys2@v2
-      with:
-        update: true
-        install: monodevelop
-
-    - run: pip install meson ninja
-    - run: meson setup build
-    - run: meson compile -C build
-
   ubuntu_linux:
     runs-on: ubuntu-latest
     container:

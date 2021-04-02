@@ -15,7 +15,6 @@ jobs:
       with:
         python-version: '3.9.x'
     - run: pip install meson ninja scan-build
-#    - run: brew install mono
     - run: scan-build meson setup build
     - run: scan-build meson compile -C build
     - uses: actions/upload-artifact@v2
@@ -31,10 +30,6 @@ jobs:
     - uses: actions/setup-python@v1
       with:
         python-version: '3.9.x'
-    - uses: msys2/setup-msys2@v2
-      with:
-        update: true
-        install: mono
 
     - run: pip install meson ninja
     - run: meson setup build

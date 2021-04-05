@@ -33,7 +33,7 @@ jobs:
     - uses: msys2/setup-msys2@v2
       with:
         update: true
-        install: ccache dmd
+        install: mono
 
     - run: pip install meson ninja
     - run: meson setup build
